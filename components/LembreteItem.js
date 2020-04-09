@@ -1,5 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import Cores from '../cores/cores';
+import Medidas from '../medidas/medidas';
 
 const LembreteItem = (props) =>{
     return (
@@ -12,11 +14,11 @@ const LembreteItem = (props) =>{
 }
     const styles = StyleSheet.create ({
         itemNaLista: {
-            padding: 12,
-            backgroundColor: '#CCC',
-            borderBottomColor: '#000',
+            padding: Medidas.p,
+            //backgroundColor: '#CCC',
+            borderBottomColor: Cores.accent,
             borderWidth: 1,
-            marginBottom: 8,
+            marginBottom: Medidas.mb2,
             borderRadius: 8
          }
     });

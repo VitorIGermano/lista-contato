@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import {View, TextInput, Button, StyleSheet} from 'react-native'
+import Cores from '../cores/cores';
+import Medidas from '../medidas/medidas';
 
 const ContatoInput = (props) => {
     const [nome, setNome] = useState('');
@@ -32,6 +34,7 @@ const ContatoInput = (props) => {
                 />
                 <Button
                     title="+"
+                    color={Cores.accent}
                     onPress={() => {
                         props.onAdicionarContato(nome, telefone)
 
@@ -49,20 +52,20 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        marginBottom: 8
+        marginBottom: Medidas.mb2
     },
     nomeInputText: {
         width: '80%',
-        borderBottomColor: 'blue',
+        borderBottomColor: Cores.primary,
         borderBottomWidth: 1,
-        padding: 2,
+        padding: Medidas.p2,
         marginBottom: 20
     },
     telefoneInputText: {
-        width: '80%',
-        borderBottomColor: 'blue',
+        width: Medidas.w2,
+        borderBottomColor: Cores.primary,
         borderBottomWidth: 1,
-        padding: 2
+        padding: Medidas.p2
     }
 });
 

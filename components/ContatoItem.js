@@ -1,13 +1,17 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Cartao from './Cartao';
+import Cores from '../cores/cores';
+import Medidas from '../medidas/medidas';
 
 const ContatoItem = (props) =>{
     return (
         <TouchableOpacity onLongPress={props.onDelete.bind(this, props.chave)}>
             <View style={styles.itemNaLista}>
-                <Text>#{props.chave}</Text>
-                <Text>Nome: {props.nome}</Text>
-                <Text>Telefone: {props.telefone}</Text>
+                <Cartao estilos = {styles.cartao}>
+                    <Text>Nome: {props.nome}</Text>
+                    <Text>Telefone: {props.telefone}</Text>
+                </Cartao>
             </View>
         </TouchableOpacity>
     );
@@ -16,12 +20,18 @@ const ContatoItem = (props) =>{
 
 const styles = StyleSheet.create({
     itemNaLista: {
-        padding: 12,
-        backgroundColor: '#E0FFFF',
-        borderColor: '#000',
+        padding: Medidas.p,
+        //backgroundColor: '#E0FFFF',
+        borderColor: Cores.primary,
         borderWidth: 1,
-        marginBottom: 8,
+        marginBottom: Medidas.mb2,
         borderRadius: 8
+    },
+    cartao: {
+        width: Medidas.w,
+        maxWidth: Medidas.mw,
+        display: 'flex',
+        justifyContent: 'space-around'
     }
 });
 
